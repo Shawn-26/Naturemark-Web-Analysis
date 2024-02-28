@@ -6,6 +6,7 @@ from branca.colormap import LinearColormap
 from selenium import webdriver
 import time
 import os
+import sys
 from PIL import Image, ImageDraw, ImageFont
 
 def add_matching_gradient_legend_to_map(folium_map, title, vmin, vmax):
