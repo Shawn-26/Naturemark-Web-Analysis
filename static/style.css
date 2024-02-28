@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+
 *,
 *::after,
 *::before {
@@ -8,6 +13,8 @@
 
 html, 
 body {
+  overflow: hidden;
+    font-family: 'Josefin Sans', sans-serif;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -26,7 +33,8 @@ a {
 header {
     width: 100%;
     height: 60px;
-    background: #000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.5rem); 
 }
 
 
@@ -41,7 +49,9 @@ header {
 
 
   /* Logo */
-
+h2{
+  font-family: 'Rubik', sans-serif;
+}
 .header_content > a > img {
     width: 50px;
 }
@@ -76,12 +86,15 @@ header {
   } */
   
   .nav_link {
+    font-weight: bolder;
     color: rgba(255, 255, 255, 0.75);
     font-size: 1.65rem;
     transition: all 0.4s;
     border-bottom: 2px solid transparent;
   }
-  
+  ul li:last-child a {
+    color: #90d183;
+}
   .nav_link:hover,
   .nav_link:focus {
     color: rgba(255, 255, 255, 1);
@@ -205,6 +218,7 @@ header {
         position: relative;
         max-width: 50%;
         margin: auto;
+        padding: 0;
         overflow: hidden;
     }
     
@@ -223,11 +237,12 @@ header {
         height: auto;
     }
     .description h1{
-        color: #90d183;
-        font-size: 3.5rem;
+      font-family: 'Rubik', sans-serif;
+      color: #90d183;
+      font-size: 2.5rem;
     }
     .description {
-        letter-spacing: .2rem;
+        letter-spacing: .01rem;
         font-size: 1.5rem;
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
@@ -262,11 +277,12 @@ header {
         color: #ffffff;
         font-size: 1.3rem;
         font-weight: bolder;
-        margin-top: 3rem;
-        margin-bottom: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
     
     .features-header h1 {
+      font-family: 'Rubik', sans-serif;
         margin: 0;
         text-align: center;
     }
@@ -311,6 +327,7 @@ header {
       }
 
       .features-header h1 {
+        font-family: 'Rubik', sans-serif;
         margin: 0;
         text-align: center;
         font-size: 1.5rem;
@@ -346,6 +363,7 @@ header {
     }
 
     .description h1{
+      font-family: 'Rubik', sans-serif;
       color: #90d183;
       font-size: 1.5rem;
   }
@@ -378,7 +396,8 @@ header {
         width: 60%;
     }
     .uploadcontainer h1{
-        display: flex;
+      font-family: 'Rubik', sans-serif;
+      display: flex;
         justify-content: center;
         color: #fff;
     }
@@ -493,6 +512,86 @@ header {
     .form-checkbox > label {
       margin-bottom: 0;
     }
+    /* Popup styling */
+.popup {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+/* Popup content */
+.popup-button{
+  transition: all 0.3s ease;
+  transform: scale(1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-family: "Rubik", sans-serif;
+  background-color: #3f57be;
+  color: white;
+  padding: 0.9375rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 0.25rem 0.125rem;
+  cursor: pointer;
+}
+.popup-button:hover{
+  background-color: #29356b;
+}
+.popup-content input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-content {
+  text-decoration: none; 
+  background-color: #fefefe;
+  margin: 5% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.popup-content p{
+  margin-top: 5px;
+}
+.popup-content ul{
+  margin-left: 5px;
+}
+.popup-content li{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.popup-content li:last-child a {
+  margin-top: 5px;
+  color: red;
+}
+/* Styling the file input button for a better look */
+input[type="file"] {
+  margin-top: 20px;
+}
 
     /* Responsive Form */
 
@@ -500,6 +599,7 @@ header {
 
       /* header */
       .uploadcontainer > h1 {
+        font-family: 'Rubik', sans-serif;
         font-size: 2rem;
       }
 

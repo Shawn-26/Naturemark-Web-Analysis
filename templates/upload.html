@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload</title>
+    <title>NatureMarkSystems</title>
     <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="header_content">
             <a href="{{url_for('index')}}">
               <img src="{{url_for('static', filename='./assets/LogoGears.png')}}" alt="logo" />
-              <h2>NatureMark System</h2>
+              <h2>NatureMark Systems</h2>
             </a>
     
             <nav class="nav">
@@ -41,10 +41,32 @@
     <main class="upload-main">
         <div class="uploadcontainer">
             <h1>Data Analysis</h1>
-            <form id="uploadForm" method="POST" enctype="multipart/form-data">
-                <div class="custom-file-upload" data-placeholder="Select your file !">
-                    <input type="file" id="fileUpload" name="fileUpload" accept=".csv" required>
-                </div>
+            <button id="openPopupBtn" class="popup-button">Click here to upload data</button>
+                    <div id="popup" class="popup">
+                        <div class="popup-content">
+                            <span id="closePopupBtn" class="close">&times;</span>
+                            <h2>Instructions for Uploading Your Data File</h2>
+                            <p>Before uploading your file, please ensure it meets the following criteria to ensure a smooth and efficient processing experience:</p>
+                            <ul>
+                                <li><strong>Required Data Columns:</strong> Your data should be organized into the following columns in the specified order:
+                                    <ul>
+                                        <li><strong>Location:</strong> The specific location where the data was collected.</li>
+                                        <li><strong>Date:</strong> The date when the data was collected (format: DD-MM-YYYY).</li>
+                                        <li><strong>Scientific Name:</strong> The scientific name of the species observed.</li>
+                                        <li><strong>Height:</strong> The height of the plant or tree measured (in meters).</li>
+                                        <li><strong>Width:</strong> The width of the plant or tree at its widest point (in meters).</li>
+                                        <li><strong>Diameter:</strong> The diameter of the stem or trunk (in centimeters).</li>
+                                        <li><strong>Carbon Seq:</strong> The amount of carbon sequestration (in kilograms or appropriate unit).</li>
+                                        <li><strong>Latitude:</strong> The latitude of the location where the data was collected.</li>
+                                        <li><strong>Longitude:</strong> The longitude of the location where the data was collected.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>File Format:</strong> The data must be exported and uploaded as a .csv (Comma Separated Values) file. Ensure your file has the extension <code>.csv</code> to be accepted by our system.</li>
+                                <li><strong>File Template:</strong> To help you format your data correctly, we have provided a downloadable template. Please use this template to ensure that your data meets our requirements.  <a href="E:\Projects\Naturemark-Web-Analysis\static\Template.xltx" target="_blank" download="Template.xltx">Download Template Here</a></li>
+                            </ul>
+                            <input type="file" id="fileInput">
+                        </div>
+                    </div>
                     <div class="analysis-options">
                         <div class="form-checkbox">
                             <input type="checkbox" class="analysis-checkbox" name="analysisType" value="Average Tree Height">
@@ -89,7 +111,7 @@
                         </div>
 
                     </div>
-                <button type="submit" class="upload-button">Upload</button>
+                <button type="submit" class="upload-button">Continue</button>
             </form>
             <div class="summary" id="summary">
                 <p><strong>File Selected:</strong> <span id="fileSelected">{{ result }}</span></p>
