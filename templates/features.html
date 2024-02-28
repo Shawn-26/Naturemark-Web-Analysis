@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | NatureMark System</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename = './assets/LogoGears.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = './style.css')}}">
+</head>
+<body>
+    
+    <header>
+        <div class="header_content">
+            <a href="{{url_for('index')}}">
+              <img src="{{ url_for('static', filename = './assets/LogoGears.png') }}" alt="logo" />
+              <h2>NatureMark System</h2>
+            </a>
+    
+            <nav class="nav">
+              <ul class="nav_list">
+                <li class="nav_item">
+                  <a class="nav_link" href="{{url_for('index')}}">Registration</a>
+                </li>
+                <li class="nav_item">
+                  <a class="nav_link" href="{{url_for('features')}}">Features</a>
+                </li>
+                <li class="nav_item">
+                  <a class="nav_link" href="https://naturemarksystems.com/">Back to Main</a>
+                </li>
+              </ul>
+            </nav>
+    
+            <div class="hamburger">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+    </header>
+
+    <!-- Feature Info -->
+
+    <div class="features-header">
+      <h1>Our Features</h1>                            
+  <a href="{{url_for('upload')}}">
+      <button type="button">Analyze Your Data</button>
+  </a>
+</div>
+  <div class="carousel">
+      <div class="slides">
+          <div class="slide" id="slide1">
+              <img src="{{url_for('static', filename = './assets/TreeHeight.png')}}" alt="Image 1">
+              <div class="description">
+                  <h1>Average Height</h1>
+               <p>This gives a detailed graph showing the average height of the trees for each species. The total height of the tree for each species is taken and divided by the total number of trees for that particular species to determine a height estimate.  It also shows the tallest tree and also the shortest tree.</p>
+              </div>
+          </div>
+          <div class="slide" id="slide2">
+              <img src="{{url_for('static', filename = './assets/TreeWidth.png')}}" alt="Image 2">
+              <div class="description">
+                  <h1>Average Width</h1>
+                  <p>This graph depicts the average width of the trees for each of the species. The total width of the tree for each of the species is taken and divided by the total number of trees for that specific species to determine an average width estimate. It also shows the thickest and slimest tree. </p>
+                </div>
+          </div>
+          <div class="slide" id="slide3">
+              <img src="{{url_for('static', filename = './assets/Distribution.png')}}" alt="Image 3">
+              <div class="description">
+                  <h1>Species Distribution</h1>
+                  <p>This image is a geo-coordinate map that shows the exact coordinates for each of the trees and the corresponding species colour coded.  Each colour-coded dot is unique to each colour-coded tree species in the legend. </p>
+                </div>
+          </div>
+          <div class="slide" id="slide4">
+              <img src="{{url_for('static', filename = './assets/Diversity.png')}}" alt="Image 4">
+              <div class="description">
+                  <h1>Species Diversity</h1>
+                  <p>This is a piechart that depicts a detailed breakdown of all the species in the dataset and their total percentage.  Each colour in the chart represents its corresponding species in the figure legend. The percentage values show how much of the total that specific species takes up on the pie. The most abundant and the least abundant species are also depicted.</p>
+                </div>
+          </div>
+          <div class="slide" id="slide5">
+              <img src="{{url_for('static', filename = './assets/HeatMap.png')}}" alt="Image 5">
+              <div class="description">
+                  <h1>Carbon Sequestration Heatmap</h1>
+                  <p>This image is a geo-coordinate map that depicts a heatmap shows the level of carbon sequestered by each tree. As the scale above shows, the lower the ability of the tree to sequester carbon the closer it is to yellow which is the lower range. The more efficient the tree is at sequestering carbon the closer it is to dark green. The tree which the highest carbon sequestering portential and the lowest is both depected </p>
+                
+                </div>
+          </div>
+          <div class="slide" id="slide6">
+              <img src="{{url_for('static', filename = './assets/SummaryTable.png')}}" alt="Image 6">
+              <div class="description">
+                  <h1>Key Statistics</h1>
+                  <p>This is an overall statistics table that shows key stats and their respective values for them.</p>
+                </div>
+          </div>
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+  </div>
+  <script src="script.js"></script>
+  <script src="{{url_for('static', filename = './script.js')}}"></script>
+</body>
+</html>

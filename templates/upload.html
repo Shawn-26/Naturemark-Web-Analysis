@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
+</head>
+<body>
+
+    <header>
+        <div class="header_content">
+            <a href="{{url_for('index')}}">
+              <img src="{{url_for('static', filename='./assets/LogoGears.png')}}" alt="logo" />
+              <h2>NatureMark System</h2>
+            </a>
+    
+            <nav class="nav">
+              <ul class="nav_list">
+                <li class="nav_item">
+                  <a class="nav_link" href="{{url_for('index')}}">Registration</a>
+                </li>
+                <li class="nav_item">
+                  <a class="nav_link" href="{{ url_for('features')}}">Features</a>
+                </li>
+                <li class="nav_item">
+                  <a class="nav_link" href="https://naturemarksystems.com/">Back to Main</a>
+                </li>
+              </ul>
+            </nav>
+    
+            <div class="hamburger">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+    </header>
+    
+
+    <main class="upload-main">
+        <div class="uploadcontainer">
+            <h1>Data Analysis</h1>
+            <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                <div class="custom-file-upload" data-placeholder="Select your file !">
+                    <input type="file" id="fileUpload" name="fileUpload" accept=".csv" required>
+                </div>
+                    <div class="analysis-options">
+                        <div class="form-checkbox">
+                            <input type="checkbox" class="analysis-checkbox" name="analysisType" value="Average Tree Height">
+                        <label>
+                            <h5>Average Tree Height</h5>
+                        </label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" class="analysis-checkbox" name="analysisType" value="Average Tree Width">
+                        <label>
+                            <h5>Average Tree Width</h5>
+                        </label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" class="analysis-checkbox" name="analysisType" value="Diversity Map">
+                        <label> 
+                            <h5>Diversity Map</h5>
+                        </label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" class="analysis-checkbox" name="analysisType" value="Distribution of Trees">
+                        <label> 
+                            <h5>Distribution of Trees</h5>
+                        </label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" class="analysis-checkbox" name="analysisType" value="Heat Map">
+                        <label> 
+                            <h5>Heat Map</h5>
+                        </label>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" class="analysis-checkbox" name="analysisType" value="Summary Table">
+                        <label> 
+                            <h5>Summary Table</h5>
+                        </label>
+                        </div>
+
+                    </div>
+                <button type="submit" class="upload-button">Upload</button>
+            </form>
+            <div class="summary" id="summary">
+                <p><strong>File Selected:</strong> <span id="fileSelected">{{ result }}</span></p>
+                <p><strong>Analysis Selected:</strong> <span id="analysisSelected" class="analysis-summary">{{ ', '.join(selected_options) }}</span></p>
+                <p>Results:</p>
+                {% if results %}
+                    <ul>
+                        {% for result_file in results %}
+                            <li>
+                                <a href="{{ url_for('download_file', analysisType='average_height', filename=result_file) }}" class="download">Download {{ result_file }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <pre>No image generated</pre>
+                {% endif %}
+            </div>
+            
+        </div>
+        <script src="{{ url_for('static', filename = 'script.js') }}" type="text/javascript"></script>
+    </main>
+</body>
+</html>
