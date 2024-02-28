@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import numpy as np
+import sys
 
 # Function to adjust color brightness and saturation
 def adjust_color_brightness_saturation(rgba_color, brightness_factor=0.8, saturation_factor=0.6):

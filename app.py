@@ -38,6 +38,20 @@ def upload():
                 elif option == 'Average Tree Width':
                     subprocess.run(['python', 'pyscripts/average_width.py', file_path])
                     results.append('Tree_width.png')
+                elif option == 'Diversity Map':
+                    subprocess.run(['python', 'pyscripts/distribution_map.py', file_path])
+                    results.append('diversity_map.png')
+                    results.append('diversity.html')
+                elif option == 'Distribution of Trees':
+                    subprocess.run(['python', 'pyscripts/pie_diversity.py', file_path])
+                    results.append('Distribution.png')
+                elif option == 'Heat Map':
+                    subprocess.run(['python', 'pyscripts/heatmap_carbonseq.py', file_path])
+                    results.append('carbon_seq_gabgal.png')
+                    results.append('carbon_seq_gabgal.html')
+                elif option == 'Summary Table':
+                    subprocess.run(['python', 'pyscripts/summary_table.py', file_path])
+                    results.append('summary_table.png')
             return render_template('upload.html', results=results)
     return render_template('upload.html', result=result)
 

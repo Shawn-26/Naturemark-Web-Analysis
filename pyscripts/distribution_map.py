@@ -4,6 +4,7 @@ import matplotlib.colors as mcolors
 from selenium import webdriver
 import time
 import os
+import sys
 from PIL import Image, ImageDraw, ImageFont
 
 def create_colormap(unique_values):
