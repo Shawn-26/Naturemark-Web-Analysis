@@ -13,7 +13,7 @@
 
 html, 
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
     font-family: 'Josefin Sans', sans-serif;
     width: 100%;
     height: 100%;
@@ -195,7 +195,7 @@ h2{
     
 
     .container-bg {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 20px;
@@ -661,3 +661,30 @@ input[type="file"] {
     .download{
       color:#000;
     }
+
+    .file-label {
+      transition: all 0.3s ease;
+      transform: scale(1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      font-family: "Rubik", sans-serif;
+      background-color: #3f57be;
+      color: white;
+      padding: 0.9375rem 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.5rem;
+      margin: 0.25rem 0.125rem;
+      cursor: pointer;
+    }
+
+    .file-label:hover {
+      background-color: #29356b;
+    }
+    
+    .file-input {
+      display: none;
+    }
+    

@@ -24,17 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('popup').style.display = 'none';
     }
     
-    document.getElementById('fileInput').onchange = function(event) {
-        var file = event.target.files[0];
+    // document.getElementById('fileInput').onchange = function(event) {
+    //     var file = event.target.files[0];
     
-        if (file) {
-            // Handle the file upload here. For demonstration, we'll just close the popup.
-            alert("File " + file.name + " uploaded successfully.");
+    //     if (file) {
+    //         // Handle the file upload here. For demonstration, we'll just close the popup.
+    //         alert("File " + file.name + " uploaded successfully.");
     
-            // Close the popup
-            document.getElementById('popup').style.display = 'none';
-        }
-    }
+    //         // Close the popup
+    //         document.getElementById('popup').style.display = 'none';
+    //     }
+    // }
     // Function to update the summary with file name
     function updateFileSummary() {
         var fileName = fileInput.files.length > 0 ? fileInput.files[0].name : 'None';

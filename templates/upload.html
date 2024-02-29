@@ -41,7 +41,7 @@
     <main class="upload-main">
         <div class="uploadcontainer">
             <h1>Data Analysis</h1>
-            <button id="openPopupBtn" class="popup-button">Click here to upload data</button>
+            <button id="openPopupBtn" class="popup-button">File Preview</button>
                     <div id="popup" class="popup">
                         <div class="popup-content">
                             <span id="closePopupBtn" class="close">&times;</span>
@@ -62,11 +62,13 @@
                                     </ul>
                                 </li>
                                 <li><strong>File Format:</strong> The data must be exported and uploaded as a .csv (Comma Separated Values) file. Ensure your file has the extension <code>.csv</code> to be accepted by our system.</li>
-                                <li><strong>File Template:</strong> To help you format your data correctly, we have provided a downloadable template. Please use this template to ensure that your data meets our requirements.  <a href="E:\Projects\Naturemark-Web-Analysis\static\Template.xltx" target="_blank" download="Template.xltx">Download Template Here</a></li>
+                                <li><strong>File Template:</strong> To help you format your data correctly, we have provided a downloadable template. Please use this template to ensure that your data meets our requirements.  <a href="{{ url_for('static', filename='Template.xltx') }}" target="_blank" download="Template.xltx">Download Template Here</a></li>
                             </ul>
-                            <input type="file" id="fileInput">
                         </div>
                     </div>
+                    <form method="POST" enctype="multipart/form-data">
+                        <label for="fileInput" class="file-label">Choose File</label>
+                        <input type="file" id="fileInput" name="fileUpload" class="file-input">
                     <div class="analysis-options">
                         <div class="form-checkbox">
                             <input type="checkbox" class="analysis-checkbox" name="analysisType" value="Average Tree Height">
